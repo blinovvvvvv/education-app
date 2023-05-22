@@ -1,0 +1,6 @@
+/node_modules
+/src/entry-client.tsx
+/src/entry-server.tsx
+/dev-dist
+/dist
+server.js

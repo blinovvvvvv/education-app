@@ -1,0 +1,8 @@
+/node_modules
+/dist
+/**/*.md
+/**/*.ts
+/**/*.tsx
+/**/*.js
+/dev-dist
+/__tests__
