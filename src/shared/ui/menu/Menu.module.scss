@@ -1,0 +1,7 @@
+.menu {
+	@apply flex items-center gap-x-3;
+
+	> .item {
+		@apply text-[15px] px-4 py-2 hover:bg-light-gray rounded-3xl transition-all cursor-pointer duration-150;
+	}
+}

@@ -1,5 +1,5 @@
+import { Home } from '@pages/home'
 import { render, screen } from '../test/testing'
-import Home from 'pages/home/Home'
 
 describe('test home component', () => {
 	beforeEach(() => {

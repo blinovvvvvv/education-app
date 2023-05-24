@@ -5,9 +5,9 @@ export default {
 		extend: {
 			colors: {
 				gray: '#242424',
-				purple: '#3d3bff',
+				blue: '#3d3bff',
 				'light-gray': '#f7f7f5',
-				magenta: '#C9C8FF',
+				purple: '#C9C8FF',
 				yellow: '#fff705',
 				white: '#FFF',
 				black: '#000',
@@ -39,6 +39,10 @@ export default {
 				1: '1',
 				2: '2',
 				3: '3',
+			},
+			screens: {
+				mobile: { max: '620px' },
+				tablet: { max: '1060px' },
 			},
 		},
 	},
