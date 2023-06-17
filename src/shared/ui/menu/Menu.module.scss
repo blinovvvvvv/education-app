@@ -1,7 +1,13 @@
 .menu {
 	@apply flex items-center gap-x-3;
 
-	> .item {
+	.item:not(.dropdown) {
 		@apply text-[15px] px-4 py-2 hover:bg-light-gray rounded-3xl transition-all cursor-pointer duration-150;
+	}
+
+	.dropdown > div {
+		> button {
+			@apply text-[15px] hover:bg-light-gray rounded-3xl px-4 py-2 transition-all cursor-pointer duration-150;
+		}
 	}
 }

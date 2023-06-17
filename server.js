@@ -32,7 +32,7 @@ async function createServer() {
 			server: {
 				middlewareMode: true,
 				watch: {
-					// During tests we edit the files too fast and sometimes chokidar
+					// During tests, we edit the files too fast and sometimes chokidar
 					// misses change events, so enforce polling for consistency
 					usePolling: true,
 					interval: 100,
@@ -59,7 +59,6 @@ async function createServer() {
 				render = (await vite.ssrLoadModule('/src/entry-server.tsx')).render
 			} else {
 				template = indexProd
-				// @ts-ignore
 				render = (await import('./dist/server/entry-server.js')).render
 			}
 			const appHtml = render(url)

@@ -1,5 +1,5 @@
 import { ToggleButton } from '@features/header/toggleHeader'
-import { Logo, Menu } from '@shared/ui/index'
+import { Dropdown, Logo, Menu } from '@shared/ui'
 import cn from 'clsx'
 import { FC, useState } from 'react'
 import { Link } from 'react-router-dom'
@@ -21,14 +21,18 @@ export const Header: FC = () => {
 						Все курсы
 					</ToggleButton>
 				</div>
-				{/* <ul className='flex'>
-					{headerData.map(item => (
-						<li key={item.text}>{item.text}</li>
-					))}
-				</ul> */}
-				<Menu>
-					<div>Dropdown</div>
-					<div>Dropdown</div>
+				<Menu
+					dropdown={[
+						<Dropdown
+							content={[{ link: 'page', text: 'Домой' }]}
+							buttonText='Dropdown'
+						/>,
+						<Dropdown
+							content={[{ link: 'page', text: 'Домой' }]}
+							buttonText='Dropdown'
+						/>,
+					]}
+				>
 					<Link to='/media'>Медиа</Link>
 					<Link to='/b2b'>Компаниям</Link>
 				</Menu>

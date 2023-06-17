@@ -1,22 +1,31 @@
-import { Children, FC, PropsWithChildren } from 'react'
+import cn from 'clsx'
+import { Children, FC, PropsWithChildren, ReactNode } from 'react'
 import styles from './Menu.module.scss'
 // interface MenuItem {
 // 	text: string
 // 	link: string
 // }
 
-// interface MenuProps {
-// 	items: MenuItem[]
-// }
+interface MenuProps {
+	dropdown?: ReactNode[]
+}
 
-export const Menu: FC<PropsWithChildren<unknown>> = ({ children }) => {
+export const Menu: FC<PropsWithChildren<MenuProps>> = ({
+	children,
+	dropdown,
+}) => {
 	const arrayChildren = Children.toArray(children)
 
 	return (
 		<ul className={styles.menu}>
-			{arrayChildren.map((item, index) => (
+			{dropdown?.map((dropdown, index) => (
+				<li className={cn(styles.item, styles.dropdown)} key={index}>
+					{dropdown}
+				</li>
+			))}
+			{arrayChildren.map((child, index) => (
 				<li className={styles.item} key={index}>
-					{item}
+					{child}
 				</li>
 			))}
 		</ul>

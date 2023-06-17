@@ -1,0 +1,38 @@
+.dropdown {
+	@apply relative z-2 inline w-full h-full;
+
+	> .button {
+		@apply w-full h-full;
+	}
+
+	> .content {
+		@apply absolute -left-6 -right-16 border border-light-gray flex-col gap-y-1 rounded-lg p-1;
+
+		top: calc(100% + 20px);
+		animation: opacity 0.3s linear;
+
+		&::before {
+			content: '';
+
+			@apply block w-full h-[12px] left-0 -top-[12px] absolute;
+		}
+
+		> li {
+			@apply w-full;
+
+			> a {
+				@apply block w-full hover:bg-light-gray transition-all rounded-md px-4 py-2;
+			}
+		}
+	}
+}
+
+@keyframes opacity {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
