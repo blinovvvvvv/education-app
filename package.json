@@ -1,5 +1,9 @@
 {
 	"name": "client",
+	"author": {
+		"name": "Ivan Blinov",
+		"email": "blinovdevelop@gmail.com"
+	},
 	"private": true,
 	"version": "0.0.0",
 	"type": "module",
@@ -10,7 +14,9 @@
 		"build:client": "vite build --outDir dist/client",
 		"build:server": "vite build --ssr src/entry-server.tsx --outDir dist/server",
 		"generate": "rm -rf ./dist && vite build --outDir dist/static && npm run build:server && node prerender",
-		"lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0 && stylelint \"./src/**/*.scss\"",
+		"lint": "yarn lint:ts && yarn lint:css",
+		"lint:ts": "eslint \"./src/**/*.{ts,tsx}\"",
+		"lint:css": "stylelint \"./src/**/*.scss\"",
 		"serve": "cross-env NODE_ENV=production node server",
 		"test": "vitest --config ./vitest.config.ts",
 		"test:ui": "vitest --ui --config ./vitest.config.ts"

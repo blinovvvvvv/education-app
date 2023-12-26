@@ -1,7 +1,15 @@
+.wrapper {
+	@apply bg-white relative z-3;
+}
+
 .header {
-	@apply p-6 flex justify-between items-center;
+	@apply p-6 flex justify-between items-center bg-white;
 }
 
 .active {
-	@apply text-green-600;
+	@apply relative z-3;
+}
+
+.bottom {
+	@apply absolute left-0 right-0 top-full h-screen bg-gray bg-opacity-80;
 }

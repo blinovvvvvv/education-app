@@ -1,4 +1,4 @@
-import App from '@app/App'
+import App from '@/app/App.tsx'
 import { StrictMode } from 'react'
 import ReactDOMServer from 'react-dom/server'
 import { StaticRouter } from 'react-router-dom/server'

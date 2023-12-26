@@ -6,29 +6,32 @@
 		"skipLibCheck": true,
 
 		/* Bundler mode */
+		"outDir": "./dist",
 		"moduleResolution": "bundler",
 		"allowImportingTsExtensions": true,
 		"resolveJsonModule": true,
 		"isolatedModules": true,
 		"noEmit": true,
 		"jsx": "react-jsx",
-
+		"esModuleInterop": true,
+		"allowSyntheticDefaultImports": true,
+		
 		/* Linting */
+		"noImplicitAny": true,
 		"strict": true,
 		"noUnusedLocals": true,
 		"noUnusedParameters": true,
 		"noFallthroughCasesInSwitch": true,
-		"baseUrl": "./src",
+		"baseUrl": ".",
 		"paths": {
-			"@app/*": ["app/*"],
-			"@entities/*": ["entities/*"],
-			"@features/*": ["features/*"],
-			"@shared/*": ["shared/*"],
-			"@pages/*": ["pages/*"],
-			"@widgets/*": ["widgets/*"],
+			"@/*": ["./src/*"]
 		}
 	},
-	"include": ["src", "test/testing.ts", "__tests__"],
+	"include": [
+		"./src/**/*.ts",
+		"./src/**/*.tsx",
+		"test/testing.ts",
+	],
 	"exclude": ["node_modules"],
 	"references": [{ "path": "./tsconfig.node.json" }]
 }

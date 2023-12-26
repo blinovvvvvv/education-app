@@ -1,4 +1,4 @@
-import { useHover } from '@shared/model'
+import { useHover } from '@/shared/model'
 import { FC, PropsWithChildren, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import styles from './Dropdown.module.scss'
