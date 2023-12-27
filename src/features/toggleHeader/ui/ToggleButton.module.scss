@@ -1,0 +1,11 @@
+.toggle {
+	@apply font-medium px-4 py-2 border border-black rounded-3xl transition-all duration-150;
+
+	&:hover {
+		@apply bg-blue border-blue text-white;
+	}
+}
+
+.toggled {
+	@apply bg-blue border-blue text-white;
+}
