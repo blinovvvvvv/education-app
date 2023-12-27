@@ -8,7 +8,6 @@
 		/* Bundler mode */
 		"outDir": "./dist",
 		"moduleResolution": "bundler",
-		"allowImportingTsExtensions": true,
 		"resolveJsonModule": true,
 		"isolatedModules": true,
 		"noEmit": true,
@@ -30,7 +29,6 @@
 	"include": [
 		"./src/**/*.ts",
 		"./src/**/*.tsx",
-		"test/testing.ts",
 	],
 	"exclude": ["node_modules"],
 	"references": [{ "path": "./tsconfig.node.json" }]
