@@ -4,20 +4,15 @@
 		"name": "Ivan Blinov",
 		"email": "blinovdevelop@gmail.com"
 	},
-	"private": true,
 	"version": "0.0.0",
 	"type": "module",
 	"scripts": {
 		"prepare": "husky install",
-		"dev": "node server",
-		"build": "rm -rf ./dist && yarn build:client && yarn build:server",
-		"build:client": "vite build --outDir dist/client",
-		"build:server": "vite build --ssr src/entry-server.tsx --outDir dist/server",
-		"generate": "rm -rf ./dist && vite build --outDir dist/static && npm run build:server && node prerender",
+		"dev": "vite",
+		"build": "vite build",
 		"lint": "yarn lint:ts && yarn lint:css",
 		"lint:ts": "eslint \"./src/**/*.{ts,tsx}\"",
 		"lint:css": "stylelint \"./src/**/*.scss\"",
-		"serve": "cross-env NODE_ENV=production node server",
 		"test": "vitest --config ./vitest.config.ts",
 		"test:ui": "vitest --ui --config ./vitest.config.ts"
 	},
