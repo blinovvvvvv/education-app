@@ -1,9 +1,9 @@
 import { ToggleButton } from '@/features/toggleHeader'
+import { cn } from '@/shared/lib/classNames/classNames'
 import { Container } from '@/shared/ui/Container/Container'
 import { Dropdown } from '@/shared/ui/Dropdown/Dropdown'
 import { Logo } from '@/shared/ui/Logo/Logo'
 import { Menu } from '@/shared/ui/Menu/Menu'
-import cn from 'clsx'
 import { FC, useState } from 'react'
 import { Link } from 'react-router-dom'
 

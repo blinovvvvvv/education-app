@@ -1,10 +1,6 @@
-import cn from 'clsx'
+import { cn } from '@/shared/lib/classNames/classNames'
 import { Children, FC, PropsWithChildren, ReactNode } from 'react'
 import styles from './Menu.module.scss'
-// interface MenuItem {
-// 	text: string
-// 	link: string
-// }
 
 interface MenuProps {
 	dropdown?: ReactNode[]

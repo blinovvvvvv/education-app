@@ -1,17 +1,28 @@
-import { RefObject, useState } from 'react'
+import { useCallback, useMemo, useState } from 'react'
 
-export const useHover = <T extends HTMLElement = HTMLElement>(
-	elementRef: RefObject<T>
-): boolean => {
-	const [value, setValue] = useState<boolean>(false)
+interface UseHoverResult {
+	isHover: boolean
+	onMouseEnter: () => void
+	onMouseLeave: () => void
+}
 
-	const handleMouseEnter = () => setValue(true)
+export const useHover = (): UseHoverResult => {
+	const [isHover, setIsHover] = useState(false)
 
-	const handleMouseLeave = () => setValue(false)
+	const onMouseEnter = useCallback(() => {
+		setIsHover(true)
+	}, [])
 
-	elementRef.current?.addEventListener('mouseenter', handleMouseEnter)
+	const onMouseLeave = useCallback(() => {
+		setIsHover(false)
+	}, [])
 
-	elementRef.current?.addEventListener('mouseleave', handleMouseLeave)
-
-	return value
+	return useMemo(
+		() => ({
+			isHover,
+			onMouseEnter,
+			onMouseLeave,
+		}),
+		[isHover, onMouseEnter, onMouseLeave]
+	)
 }

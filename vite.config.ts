@@ -21,19 +21,6 @@ export default ({ mode }) => {
 			react(),
 			checker({
 				typescript: true,
-				eslint: {
-					lintCommand:
-						'eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0',
-					dev: {
-						logLevel: ['error'],
-					},
-				},
-				stylelint: {
-					lintCommand: 'stylelint --fix "./src/**/*.scss"',
-					dev: {
-						logLevel: ['error'],
-					},
-				},
 			}),
 			VitePWA({
 				registerType: 'prompt',

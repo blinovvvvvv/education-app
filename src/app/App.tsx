@@ -6,8 +6,9 @@ import { Route, Routes } from 'react-router-dom'
 
 const App: FC = () => {
 	return (
-		<div suppressHydrationWarning className='w-full h-full'>
+		<div className='w-full h-full'>
 			<Header />
+			{/* FIXME MOVE IT TO APPROUTER COMPONENT*/}
 			<Routes>
 				<Route index element={<Home />} />
 				<Route path='test' element={<TestPage />} />
