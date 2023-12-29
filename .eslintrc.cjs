@@ -2,8 +2,6 @@
 module.exports = {
 	env: { browser: true, es2020: true, jest: true },
 	extends: [
-		'@feature-sliced/eslint-config/rules/public-api',
-		'@feature-sliced/eslint-config/rules/layers-slices',
 		'eslint:recommended',
 		'plugin:@typescript-eslint/recommended',
 		'plugin:react-hooks/recommended',
