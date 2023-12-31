@@ -1,6 +1,6 @@
 export type Mods = Record<string, boolean | string | undefined>
 
-export function cn(...args: (string | Mods)[]) {
+export function cn(...args: (string | Mods | undefined)[]) {
 	let strings: string[] = []
 	let lastArgument: Mods = {}
 

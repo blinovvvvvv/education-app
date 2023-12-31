@@ -1,12 +1,14 @@
+import { StartScreen } from '@/widgets/StartScreen'
+
 import { FC } from 'react'
-import './Home.scss'
 
 export const Home: FC = () => {
 	return (
-		<>
-			<p className='read-the-docs'>
-				Click on the Vite and React logos to learn more
-			</p>
-		</>
+		<StartScreen
+			title={'С наступающим Новым Годом!'}
+			imgSrc={
+				'https://cdn.skillbox.pro/wbd-front/skillbox-static/start-screen/start-screen-sm@1x.png?v=201223'
+			}
+		/>
 	)
 }

@@ -6,7 +6,7 @@
 	}
 
 	> .content {
-		@apply absolute -left-6 -right-16 border border-light-gray flex-col gap-y-1 rounded-lg p-1;
+		@apply absolute -left-6 -right-16 border border-light-gray flex-col gap-y-1 rounded-lg p-1 bg-white;
 
 		top: calc(100% + 20px);
 		animation: opacity 0.3s linear;
