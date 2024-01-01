@@ -1,6 +1,6 @@
 # Education App (Skillbox copy)
 
-This is a frontend application built using the **React** & **Vite & SSR** and **Feature-Sliced Design** 🍰.
+This is a frontend application built using the **React** & **Vite** and **Feature-Sliced Design** 🍰.
 
 - React, Redux Toolkit, React Hook Form
 - Vite⚡, TypeScript, TailwindCSS✨

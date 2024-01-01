@@ -22,7 +22,9 @@ module.exports = {
 		'@typescript-eslint/no-empty-interface': 'off',
 		'no-multiple-empty-lines': 'error',
 		'import/no-internal-modules': 'off',
-		'@typescript-eslint/no-non-null-assertion': 'off'
+		'@typescript-eslint/no-non-null-assertion': 'off',
+		'prefer-const': 'off',
+		'@typescript-eslint/ban-ts-comment': 'off'
 	},
 	settings: {
 		react: {
