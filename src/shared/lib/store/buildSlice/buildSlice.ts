@@ -1,4 +1,3 @@
-import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
 import {
 	bindActionCreators,
 	createSlice,
@@ -7,6 +6,7 @@ import {
 	SliceSelectors,
 } from '@reduxjs/toolkit'
 import { useMemo } from 'react'
+import { useAppDispatch } from '../../hooks/useAppDispatch/useAppDispatch'
 
 export function buildSlice<
 	State,

@@ -1,7 +1,7 @@
-import { getValue } from '@/entities/Counter/model/selectors/getValue'
-import { useCounterActions } from '@/entities/Counter/model/slice/counter.slice'
 import { FC } from 'react'
 import { useSelector } from 'react-redux'
+import { getValue } from '../model/selectors/getValue'
+import { useCounterActions } from '../model/slice/counter.slice'
 
 export const Counter: FC = () => {
 	const value = useSelector(getValue)

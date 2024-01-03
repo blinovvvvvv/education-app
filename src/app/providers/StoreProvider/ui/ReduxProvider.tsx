@@ -1,7 +1,7 @@
-import { createReduxStore } from '@/app/providers/StoreProvider/config/store'
-import { StoreState } from '@/app/providers/StoreProvider/config/store.types'
 import { FC, PropsWithChildren } from 'react'
 import { Provider } from 'react-redux'
+import { createReduxStore } from '../config/store'
+import { StoreState } from '../config/store.types'
 
 interface ReduxProviderProps {
 	initialState?: DeepPartial<StoreState>

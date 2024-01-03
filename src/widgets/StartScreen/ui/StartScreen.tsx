@@ -1,3 +1,4 @@
+import { CareerTagList } from '@/entities/CareerTag'
 import { cn } from '@/shared/lib/classNames/classNames'
 import { Card } from '@/shared/ui/Card/Card'
 import { Picture } from '@/shared/ui/Picture/Picture'
@@ -22,6 +23,7 @@ export const StartScreen: FC<StartScreenProps> = ({
 				<Title size='xl' className='font-bold text-white'>
 					{title}
 				</Title>
+				<CareerTagList />
 			</div>
 			<Picture src={imgSrc} alt={'Start screen image'} />
 		</Card>

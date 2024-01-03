@@ -17,6 +17,10 @@ export default ({ mode }) => {
 		resolve: {
 			alias: [{ find: '@', replacement: '/src' }],
 		},
+		define: {
+			__API__: JSON.stringify('http://localhost:4200/api'),
+			__IS_DEV: JSON.stringify(mode),
+		},
 		plugins: [
 			react(),
 			checker({

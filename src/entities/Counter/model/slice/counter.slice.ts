@@ -1,5 +1,5 @@
-import { CounterState } from '@/entities/Counter/model/types/counter.state'
 import { buildSlice } from '@/shared/lib/store/buildSlice/buildSlice'
+import { CounterState } from '../types/counter.state'
 
 const initialState: CounterState = {
 	value: 0,
