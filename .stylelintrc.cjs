@@ -21,5 +21,8 @@ module.exports = {
 		'no-descending-specificity': null,
 		'selector-class-pattern': '',
 		'no-empty-source': null,
+		'block-no-empty': null,
+		'color-function-notation': null,
+		'alpha-value-notation': null
 	},
 }

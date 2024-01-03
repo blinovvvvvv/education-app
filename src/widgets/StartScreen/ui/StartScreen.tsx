@@ -19,7 +19,7 @@ export const StartScreen: FC<StartScreenProps> = ({
 }) => {
 	return (
 		<Card className={cn(styles.StartScreen, className)}>
-			<div className='self-center'>
+			<div className='self-center flex flex-col gap-20'>
 				<Title size='xl' className='font-bold text-white'>
 					{title}
 				</Title>

@@ -1,5 +1,5 @@
 import { useHover } from '@/shared/lib/hooks/useHover/useHover'
-import { FC, PropsWithChildren } from 'react'
+import { FC, memo, PropsWithChildren, useMemo } from 'react'
 import { Link } from 'react-router-dom'
 import styles from './Dropdown.module.scss'
 
@@ -13,30 +13,35 @@ interface DropdownProps {
 	content: DropdownContent[]
 }
 
-export const Dropdown: FC<PropsWithChildren<DropdownProps>> = ({
-	buttonText,
-	content,
-}) => {
-	const { onMouseEnter, onMouseLeave, isHover } = useHover()
+export const Dropdown: FC<PropsWithChildren<DropdownProps>> = memo(
+	({ buttonText, content }) => {
+		const { onMouseEnter, onMouseLeave, isHover } = useHover()
 
-	return (
-		<div
-			className={styles.dropdown}
-			onMouseEnter={onMouseEnter}
-			onMouseLeave={onMouseLeave}
-		>
-			<button className={styles.button}>{buttonText}</button>
-
-			<ul
-				className={styles.content}
-				style={{ display: isHover ? 'flex' : 'none' }}
-			>
-				{content.map(item => (
+		const dropdownItems = useMemo(
+			() =>
+				content.map(item => (
 					<li key={item.link}>
 						<Link to={item.link}>{item.text}</Link>
 					</li>
-				))}
-			</ul>
-		</div>
-	)
-}
+				)),
+			[content]
+		)
+
+		return (
+			<div
+				className={styles.dropdown}
+				onMouseEnter={onMouseEnter}
+				onMouseLeave={onMouseLeave}
+			>
+				<button className={styles.button}>{buttonText}</button>
+
+				<ul
+					className={styles.content}
+					style={{ display: isHover ? 'flex' : 'none' }}
+				>
+					{dropdownItems}
+				</ul>
+			</div>
+		)
+	}
+)

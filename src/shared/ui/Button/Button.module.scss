@@ -1,0 +1,9 @@
+.button {
+	@apply cursor-pointer px-4 py-2;
+}
+
+.default {
+	@apply bg-blue text-white rounded-md hover:bg-black;
+
+	transition: all 0.2s ease;
+}
