@@ -19,5 +19,7 @@ export function cn(...args: (string | Mods | undefined)[]) {
 		Object.entries(lastArgument)
 			.filter(([_, value]) => Boolean(value))
 			.map(([className]) => className),
-	].join(' ')
+	]
+		.join(' ')
+		.trim()
 }

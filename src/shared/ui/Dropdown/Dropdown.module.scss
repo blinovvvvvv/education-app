@@ -10,6 +10,7 @@
 
 		top: calc(100% + 20px);
 		animation: opacity 0.3s linear;
+		width: min-content;
 
 		&::before {
 			content: '';
@@ -22,6 +23,8 @@
 
 			> a {
 				@apply block w-full hover:bg-light-gray transition-all rounded-md px-4 py-2;
+
+				white-space: nowrap;
 			}
 		}
 	}
