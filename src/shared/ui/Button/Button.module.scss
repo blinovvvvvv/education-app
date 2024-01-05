@@ -7,3 +7,11 @@
 
 	transition: all 0.2s ease;
 }
+
+.outline {
+	@apply font-medium border border-black rounded-3xl transition-all duration-150;
+
+	&:hover {
+		@apply bg-blue border-blue text-white;
+	}
+}

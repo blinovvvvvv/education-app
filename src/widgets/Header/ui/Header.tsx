@@ -1,5 +1,5 @@
-import { ToggleButton } from '@/features/toggleHeader'
 import { cn } from '@/shared/lib/classNames/classNames'
+import { Button } from '@/shared/ui/Button/Button'
 import { Container } from '@/shared/ui/Container/Container'
 import { Divider } from '@/shared/ui/Divider/Divider'
 import { Dropdown } from '@/shared/ui/Dropdown/Dropdown'
@@ -11,7 +11,11 @@ import { Link } from 'react-router-dom'
 import styles from './Header.module.scss'
 
 export const Header: FC = () => {
-	const [toggle, setToggle] = useState<boolean>(false)
+	const [toggle, setToggle] = useState(false)
+
+	const onToggle = () => {
+		setToggle(prev => !prev)
+	}
 
 	return (
 		<>
@@ -24,9 +28,15 @@ export const Header: FC = () => {
 					>
 						<div className='flex items-center gap-x-32'>
 							<Logo />
-							<ToggleButton toggleFn={setToggle} toggleStatus={toggle}>
+							<Button
+								theme='outline'
+								onClick={onToggle}
+								className={cn({
+									[styles.toggled]: toggle,
+								})}
+							>
 								Все курсы
-							</ToggleButton>
+							</Button>
 						</div>
 						<Menu
 							dropdown={[
