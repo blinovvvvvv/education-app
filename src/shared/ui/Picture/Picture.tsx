@@ -1,7 +1,7 @@
 import { cn } from '@/shared/lib/classNames/classNames'
-import { FC, HTMLAttributes, memo } from 'react'
+import { FC, ImgHTMLAttributes, memo } from 'react'
 
-interface PictureProps extends HTMLAttributes<HTMLImageElement> {
+interface PictureProps extends ImgHTMLAttributes<HTMLImageElement> {
 	className?: string
 	src: string
 	alt: string

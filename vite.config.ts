@@ -19,7 +19,7 @@ export default ({ mode }) => {
 		},
 		define: {
 			__API__: JSON.stringify('http://localhost:4200/api'),
-			__IS_DEV: JSON.stringify(mode),
+			__IS_DEV__: JSON.stringify(mode === 'development'),
 		},
 		plugins: [
 			react(),

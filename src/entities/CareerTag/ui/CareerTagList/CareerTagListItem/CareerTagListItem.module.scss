@@ -3,3 +3,7 @@
 
 	transition: all 0.2s ease;
 }
+
+.outline {
+	@apply border border-black rounded-3xl hover:bg-blue hover:border-blue hover:text-white;
+}

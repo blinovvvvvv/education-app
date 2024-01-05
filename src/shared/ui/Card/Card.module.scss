@@ -1,3 +1,13 @@
 .card {
 	@apply px-9 py-8 rounded-2xl;
 }
+
+.hover {
+	@apply cursor-pointer;
+
+	transition: all 0.2s ease;
+
+	&:hover {
+		transform: scale(1.05);
+	}
+}
