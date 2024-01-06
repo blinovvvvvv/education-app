@@ -1,4 +1,5 @@
 import { Home } from '@/pages/Home'
+import { LoginPage } from '@/pages/Login'
 import { AppRoutes } from '@/shared/const/router'
 import { AppRoutesProps } from '@/shared/types/router'
 
@@ -7,8 +8,8 @@ export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
 		path: '/',
 		element: <Home />,
 	},
-	[AppRoutes.ABOUT]: {
-		path: '/about',
-		element: <div>ABOUT</div>,
+	[AppRoutes.LOGIN]: {
+		path: '/login',
+		element: <LoginPage />,
 	},
 }

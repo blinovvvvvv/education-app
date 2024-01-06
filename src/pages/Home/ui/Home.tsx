@@ -1,11 +1,13 @@
 import { FindProfession } from '@/widgets/FindProfession'
+import { Page } from '@/widgets/Page'
+
 import { StartScreen } from '@/widgets/StartScreen'
 
 import { FC } from 'react'
 
 const Home: FC = () => {
 	return (
-		<>
+		<Page>
 			<StartScreen
 				title={'С наступающим Новым Годом!'}
 				imgSrc={
@@ -13,7 +15,7 @@ const Home: FC = () => {
 				}
 			/>
 			<FindProfession className='my-16' />
-		</>
+		</Page>
 	)
 }
 
