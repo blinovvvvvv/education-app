@@ -1,5 +1,6 @@
 import { StoreState } from '@/app/providers/StoreProvider'
-import { counterSlice } from '@/entities/Counter'
+import { userReducer } from '@/entities/User'
+import { loginReducer } from '@/features/auth'
 import { $api } from '@/shared/api/api'
 import { rtkApi } from '@/shared/api/rtkApi'
 import { configureStore } from '@reduxjs/toolkit'
@@ -12,7 +13,8 @@ export const createReduxStore = (initialState: DeepPartial<StoreState>) => {
 
 	const store = configureStore({
 		reducer: {
-			counter: counterSlice.reducer,
+			user: userReducer,
+			login: loginReducer,
 
 			// api
 			[rtkApi.reducerPath]: rtkApi.reducer,
@@ -29,6 +31,7 @@ export const createReduxStore = (initialState: DeepPartial<StoreState>) => {
 
 	return store
 }
+
 type StoreReturnType = ReturnType<typeof createReduxStore>
 
 export type RootState = StoreReturnType

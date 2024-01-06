@@ -1,8 +1,14 @@
-import { CounterState } from '@/entities/Counter'
+import { UserState } from '@/entities/User'
+import { LoginState } from '@/features/auth'
+import { rtkApi } from '@/shared/api/rtkApi'
 import { AxiosInstance } from 'axios'
 
 export interface StoreState {
-	counter: CounterState
+	// counter: CounterState <- test entity
+	user: UserState
+	login: LoginState
+
+	[rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>
 }
 
 export interface ExtraArg {

@@ -1,3 +1,4 @@
+import { LoginButton } from '@/features/auth'
 import { cn } from '@/shared/lib/classNames/classNames'
 import { Button } from '@/shared/ui/Button/Button'
 import { Dropdown } from '@/shared/ui/Dropdown/Dropdown'
@@ -72,6 +73,7 @@ export const Header: FC = () => {
 						<Link to='/media'>Медиа</Link>
 						<Link to='/b2b'>Компаниям</Link>
 					</Menu>
+					<LoginButton />
 				</div>
 				{toggle && (
 					<div className={styles.curtain}>
