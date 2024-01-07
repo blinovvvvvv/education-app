@@ -1,12 +1,16 @@
-import { cn } from '@/shared/lib/classNames/classNames'
+import { LoginForm } from '@/features/auth'
+import { Page } from '@/widgets/Page'
 import { FC } from 'react'
+import { useNavigate } from 'react-router-dom'
 
-interface LoginProps {
-	className?: string
-}
-
-const Login: FC<LoginProps> = ({ className }) => {
-	return <div className={cn(className)}>Login</div>
+const Login: FC = () => {
+	const navigate = useNavigate()
+	const onSuccess = () => navigate('/')
+	return (
+		<Page noHeader>
+			<LoginForm onSuccess={onSuccess} />
+		</Page>
+	)
 }
 
 export default Login

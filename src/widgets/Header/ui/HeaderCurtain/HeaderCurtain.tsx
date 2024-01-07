@@ -31,7 +31,7 @@ export const HeaderCurtain: FC<HeaderCurtainProps> = ({ className }) => {
 					<div>
 						<Card link={'/course'} hover className={styles.card}>
 							<div className='max-w-[200px]'>
-								<Title level={'h3'} size='s'>
+								<Title level={'h3'} size='xs'>
 									Новогодняя распродажа - скидки до 60%
 								</Title>
 								Выберите курсы по выгодной цене.

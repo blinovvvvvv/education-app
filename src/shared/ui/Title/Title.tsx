@@ -4,7 +4,7 @@ import styles from './Title.module.scss'
 
 type TitleLevel = 'h1' | 'h2' | 'h3' | 'h4' | 'h5'
 
-type TitleSize = 's' | 'm' | 'l' | 'xl'
+type TitleSize = 'xs' | 's' | 'm' | 'l' | 'xl'
 
 interface TitleProps {
 	className?: string
