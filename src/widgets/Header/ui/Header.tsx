@@ -1,3 +1,4 @@
+import { LoginButton } from '@/features/auth'
 import { cn } from '@/shared/lib/classNames/classNames'
 import { AppLink } from '@/shared/ui/AppLink/AppLink'
 import { Button } from '@/shared/ui/Button/Button'
@@ -82,13 +83,7 @@ export const Header: FC = () => {
 							<AppLink to='/media'>Медиа</AppLink>
 							<AppLink to='/b2b'>Компаниям</AppLink>
 						</Menu>
-						<Button
-							className='text-[15px]'
-							theme='clear'
-							onClick={onLoginClick}
-						>
-							Войти
-						</Button>
+						<LoginButton className='text-[15px]' />
 					</div>
 				</div>
 				{toggle && (

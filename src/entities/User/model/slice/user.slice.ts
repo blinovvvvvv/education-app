@@ -20,6 +20,13 @@ export const userSlice = buildSlice({
 			state.data = undefined
 			removeTokensFromCookie()
 		},
+		init: state => {
+			const user = JSON.parse(localStorage.getItem(USER_LOCALSTORAGE_KEY)!)
+			if (user) {
+				state.data = user
+				state._initialized = true
+			}
+		},
 	},
 })
 

@@ -28,6 +28,7 @@ $api.interceptors.response.use(
 		) {
 			originalRequest._isRetry = true
 			try {
+				//FIXME: доделать
 				await Cookies.get('refreshToken')
 
 				return $api.request(originalRequest)

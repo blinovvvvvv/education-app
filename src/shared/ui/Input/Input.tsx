@@ -1,5 +1,12 @@
 import { cn } from '@/shared/lib/classNames/classNames'
-import { ChangeEvent, FC, InputHTMLAttributes, memo, useState } from 'react'
+import {
+	ChangeEvent,
+	FC,
+	InputHTMLAttributes,
+	memo,
+	useCallback,
+	useState,
+} from 'react'
 import { Picture } from '../Picture/Picture'
 import styles from './Input.module.scss'
 
@@ -16,12 +23,15 @@ export const Input: FC<InputProps> = memo(
 	({ className, placeholder, icon, value, onChange, ...otherProps }) => {
 		const [focused, setIsFocused] = useState(false)
 
-		const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
-			onChange?.(e.target.value)
-		}
+		const onChangeHandler = useCallback(
+			(e: ChangeEvent<HTMLInputElement>) => {
+				onChange?.(e.target.value)
+			},
+			[onChange]
+		)
 
-		const onFocus = () => setIsFocused(true)
-		const onBlur = () => setIsFocused(false)
+		const onFocus = useCallback(() => setIsFocused(true), [])
+		const onBlur = useCallback(() => setIsFocused(false), [])
 
 		return (
 			<div
