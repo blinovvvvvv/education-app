@@ -21,7 +21,18 @@ export const CareerTagList: FC<CareerTagListProps> = ({
 	const { data, isLoading, isError } = useTags()
 
 	if (isLoading) {
-		return <Skeleton width={200} height={40} />
+		return (
+			<div className={cn(styles.list, className)} style={{ maxWidth }}>
+				<Skeleton width={190} height={35} />
+				<Skeleton width={190} height={35} />
+				<Skeleton width={190} height={35} />
+				<Skeleton width={190} height={35} />
+				<Skeleton width={190} height={35} />
+				<Skeleton width={190} height={35} />
+				<Skeleton width={190} height={35} />
+				<Skeleton width={190} height={35} />
+			</div>
+		)
 	}
 
 	const isOutline = variant === 'outline'

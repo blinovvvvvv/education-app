@@ -1,6 +1,6 @@
 import { useHover } from '@/shared/lib/hooks/useHover/useHover'
 import { FC, memo, PropsWithChildren, useMemo } from 'react'
-import { Link } from 'react-router-dom'
+import { AppLink } from '../AppLink/AppLink'
 import styles from './Dropdown.module.scss'
 
 interface DropdownContent {
@@ -21,7 +21,7 @@ export const Dropdown: FC<PropsWithChildren<DropdownProps>> = memo(
 			() =>
 				content.map(item => (
 					<li key={item.link}>
-						<Link to={item.link}>{item.text}</Link>
+						<AppLink to={item.link}>{item.text}</AppLink>
 					</li>
 				)),
 			[content]

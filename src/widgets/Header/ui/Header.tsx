@@ -1,12 +1,32 @@
 import { cn } from '@/shared/lib/classNames/classNames'
+import { AppLink } from '@/shared/ui/AppLink/AppLink'
 import { Button } from '@/shared/ui/Button/Button'
 import { Dropdown } from '@/shared/ui/Dropdown/Dropdown'
 import { Logo } from '@/shared/ui/Logo/Logo'
 import { Menu } from '@/shared/ui/Menu/Menu'
-import { FC, useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { FC, useCallback, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import styles from './Header.module.scss'
 import { HeaderCurtain } from './HeaderCurtain/HeaderCurtain'
+
+const dropdownContentFirst = [
+	{ link: 'company', text: 'О нас' },
+	{ link: 'results', text: 'Результаты' },
+	{ link: 'reviews', text: 'Отзывы' },
+	{ link: 'contacts', text: 'Контакты' },
+	{ link: 'career', text: 'Вакансии' },
+	{ link: 'about', text: 'О платформе' },
+	{ link: 'career-center', text: 'Центр карьеры' },
+	{ link: 'school', text: 'Школа кураторов' },
+	{ link: 'sales', text: 'Скидки для друзей' },
+	{ link: 'community', text: 'Сообщество Курсач' },
+]
+
+const dropdownContentSecond = [
+	{ link: 'webinars', text: 'Все вебинары' },
+	{ link: 'playlists', text: 'Плейлисты' },
+	{ link: 'schedule', text: 'Расписание' },
+]
 
 export const Header: FC = () => {
 	const [toggle, setToggle] = useState(false)
@@ -18,9 +38,13 @@ export const Header: FC = () => {
 		document.body.className = ''
 	}
 
-	const onToggle = () => {
+	const onToggle = useCallback(() => {
 		setToggle(prev => !prev)
-	}
+	}, [])
+
+	const onLoginClick = useCallback(() => {
+		navigate('/login')
+	}, [navigate])
 
 	return (
 		<div className={styles.wrapper}>
@@ -46,37 +70,22 @@ export const Header: FC = () => {
 						<Menu
 							dropdown={[
 								<Dropdown
-									content={[
-										{ link: 'company', text: 'О нас' },
-										{ link: 'results', text: 'Результаты' },
-										{ link: 'reviews', text: 'Отзывы' },
-										{ link: 'contacts', text: 'Контакты' },
-										{ link: 'career', text: 'Вакансии' },
-										{ link: 'about', text: 'О платформе' },
-										{ link: 'career-center', text: 'Центр карьеры' },
-										{ link: 'school', text: 'Школа кураторов' },
-										{ link: 'sales', text: 'Скидки для друзей' },
-										{ link: 'community', text: 'Сообщество Курсач' },
-									]}
+									content={dropdownContentFirst}
 									buttonText='О Курсач'
 								/>,
 								<Dropdown
-									content={[
-										{ link: 'webinars', text: 'Все вебинары' },
-										{ link: 'playlists', text: 'Плейлисты' },
-										{ link: 'schedule', text: 'Расписание' },
-									]}
+									content={dropdownContentSecond}
 									buttonText='Вебинары'
 								/>,
 							]}
 						>
-							<Link to='/media'>Медиа</Link>
-							<Link to='/b2b'>Компаниям</Link>
+							<AppLink to='/media'>Медиа</AppLink>
+							<AppLink to='/b2b'>Компаниям</AppLink>
 						</Menu>
 						<Button
 							className='text-[15px]'
 							theme='clear'
-							onClick={() => navigate('/login')}
+							onClick={onLoginClick}
 						>
 							Войти
 						</Button>
