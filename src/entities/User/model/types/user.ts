@@ -6,7 +6,7 @@ export interface User {
 }
 
 export interface UserState {
-	user?: User
+	data?: User
 
 	_initialized: boolean
 }

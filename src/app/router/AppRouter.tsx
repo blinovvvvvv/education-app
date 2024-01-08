@@ -16,8 +16,10 @@ const AppRouter = () => {
 				key={route.path}
 				path={route.path}
 				element={
-					route?.isAdmin ? (
-						<ProtectedRoute adminOnly={route.isAdmin}>{element}</ProtectedRoute>
+					route?.authOnly ? (
+						<ProtectedRoute adminOnly={route?.isAdmin}>
+							{element}
+						</ProtectedRoute>
 					) : (
 						element
 					)

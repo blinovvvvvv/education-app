@@ -13,11 +13,11 @@ export const userSlice = buildSlice({
 	initialState,
 	reducers: {
 		saveUser: (state, { payload }: PayloadAction<User>) => {
-			state.user = payload
+			state.data = payload
 			localStorage.setItem(USER_LOCALSTORAGE_KEY, JSON.stringify(payload))
 		},
 		logout: state => {
-			state.user = undefined
+			state.data = undefined
 			removeTokensFromCookie()
 		},
 	},

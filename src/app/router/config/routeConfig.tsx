@@ -12,6 +12,7 @@ export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
 	[AppRoutes.LOGIN]: {
 		path: '/login',
 		element: <LoginPage />,
+		isAdmin: true,
 	},
 	[AppRoutes.NOT_FOUND]: {
 		path: '*',
