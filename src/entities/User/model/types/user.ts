@@ -1,5 +1,6 @@
-export interface User {
-	id: number
+import { IdTimestamps } from '@/shared/types/backendIdTimestamps'
+
+export interface User extends Pick<IdTimestamps, 'id'> {
 	login: string
 	isAdmin: boolean
 	payStatus: string

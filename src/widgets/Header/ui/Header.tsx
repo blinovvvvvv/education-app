@@ -2,15 +2,16 @@ import { LoginButton } from '@/features/auth'
 import { cn } from '@/shared/lib/classNames/classNames'
 import { AppLink } from '@/shared/ui/AppLink/AppLink'
 import { Button } from '@/shared/ui/Button/Button'
-import { Dropdown } from '@/shared/ui/Dropdown/Dropdown'
+import { Container } from '@/shared/ui/Container/Container'
+import { Dropdown, DropdownContent } from '@/shared/ui/Dropdown/Dropdown'
 import { Logo } from '@/shared/ui/Logo/Logo'
 import { Menu } from '@/shared/ui/Menu/Menu'
+import { MenuItem } from '@/shared/ui/Menu/MenuItem/MenuItem'
 import { FC, useCallback, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
 import styles from './Header.module.scss'
 import { HeaderCurtain } from './HeaderCurtain/HeaderCurtain'
 
-const dropdownContentFirst = [
+const dropdownContentFirst: DropdownContent[] = [
 	{ link: 'company', text: 'О нас' },
 	{ link: 'results', text: 'Результаты' },
 	{ link: 'reviews', text: 'Отзывы' },
@@ -23,7 +24,7 @@ const dropdownContentFirst = [
 	{ link: 'community', text: 'Сообщество Курсач' },
 ]
 
-const dropdownContentSecond = [
+const dropdownContentSecond: DropdownContent[] = [
 	{ link: 'webinars', text: 'Все вебинары' },
 	{ link: 'playlists', text: 'Плейлисты' },
 	{ link: 'schedule', text: 'Расписание' },
@@ -31,7 +32,6 @@ const dropdownContentSecond = [
 
 export const Header: FC = () => {
 	const [toggle, setToggle] = useState(false)
-	const navigate = useNavigate()
 
 	if (toggle) {
 		document.body.className = 'overflow-hidden'
@@ -43,13 +43,9 @@ export const Header: FC = () => {
 		setToggle(prev => !prev)
 	}, [])
 
-	const onLoginClick = useCallback(() => {
-		navigate('/login')
-	}, [navigate])
-
 	return (
 		<div className={styles.wrapper}>
-			<div className='max-w-[1280px] mx-auto'>
+			<Container>
 				<div
 					className={cn(styles.header, {
 						[styles.active]: toggle,
@@ -68,20 +64,25 @@ export const Header: FC = () => {
 						</Button>
 					</div>
 					<div className='flex items-center gap-6'>
-						<Menu
-							dropdown={[
+						<Menu>
+							<MenuItem dropdown>
 								<Dropdown
 									content={dropdownContentFirst}
 									buttonText='О Курсач'
-								/>,
+								/>
+							</MenuItem>
+							<MenuItem dropdown>
 								<Dropdown
 									content={dropdownContentSecond}
 									buttonText='Вебинары'
-								/>,
-							]}
-						>
-							<AppLink to='/media'>Медиа</AppLink>
-							<AppLink to='/b2b'>Компаниям</AppLink>
+								/>
+							</MenuItem>
+							<MenuItem>
+								<AppLink to='/media'>Медиа</AppLink>
+							</MenuItem>
+							<MenuItem>
+								<AppLink to='/b2b'>Компаниям</AppLink>
+							</MenuItem>
 						</Menu>
 						<LoginButton className='text-[15px]' />
 					</div>
@@ -91,7 +92,7 @@ export const Header: FC = () => {
 						<HeaderCurtain />
 					</div>
 				)}
-			</div>
+			</Container>
 		</div>
 	)
 }

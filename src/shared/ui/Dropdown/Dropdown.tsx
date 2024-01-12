@@ -3,7 +3,7 @@ import { FC, memo, PropsWithChildren, useMemo } from 'react'
 import { AppLink } from '../AppLink/AppLink'
 import styles from './Dropdown.module.scss'
 
-interface DropdownContent {
+export interface DropdownContent {
 	link: string
 	text: string
 }
