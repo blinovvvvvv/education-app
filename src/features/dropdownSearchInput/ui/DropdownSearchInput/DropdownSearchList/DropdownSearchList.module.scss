@@ -1,0 +1,19 @@
+.list {
+	@apply absolute left-0 right-0 top-16 flex flex-col gap-2 p-2 border border-light-gray rounded-lg bg-white;
+
+	animation: opacity 0.2s ease;
+}
+
+.item > a {
+	@apply block w-full hover:bg-light-gray transition-all rounded-md px-4 py-3;
+}
+
+@keyframes opacity {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
