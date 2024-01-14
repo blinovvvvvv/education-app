@@ -15,7 +15,7 @@ jobs:
       ACTIONS_ALLOW_UNSECURE_COMMANDS: true
     steps:
       - name: Starting NodeJS
-        uses: actions/setup-node@1.4.3
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
       - name: Checkout branch
