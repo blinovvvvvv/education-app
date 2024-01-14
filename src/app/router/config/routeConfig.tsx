@@ -1,3 +1,4 @@
+import { Dashboard } from '@/pages/Dashboard'
 import { Home } from '@/pages/Home'
 import { LoginPage } from '@/pages/Login'
 import { NotFoundPage } from '@/pages/NotFound'
@@ -14,6 +15,12 @@ export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
 		element: <LoginPage />,
 		isAdmin: true,
 	},
+	[AppRoutes.DASHBOARD]: {
+		path: '/dashboard',
+		authOnly: true,
+		element: <Dashboard />,
+	},
+	// not found, last
 	[AppRoutes.NOT_FOUND]: {
 		path: '*',
 		element: <NotFoundPage />,

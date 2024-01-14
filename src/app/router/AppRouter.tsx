@@ -1,4 +1,5 @@
 import { AppRoutesProps } from '@/shared/types/router'
+import { PageLoader } from '@/widgets/PageLoader'
 import { memo, Suspense, useCallback } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import { routeConfig } from './config/routeConfig'
@@ -6,9 +7,8 @@ import { ProtectedRoute } from './ProtectedRoute'
 
 const AppRouter = () => {
 	const renderWithWrapper = useCallback((route: AppRoutesProps) => {
-		//FIXME: Add page loader
 		const element = (
-			<Suspense fallback={<div>Loading</div>}>{route.element}</Suspense>
+			<Suspense fallback={<PageLoader />}>{route.element}</Suspense>
 		)
 
 		return (

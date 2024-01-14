@@ -7,7 +7,7 @@ export const findCourses = async (searchTerm?: string) => {
 			params: searchTerm ? { s: searchTerm } : {},
 		})
 
-		return data.data
+		return data.data.slice(0, 5)
 	} catch (e) {
 		console.error(e)
 	}

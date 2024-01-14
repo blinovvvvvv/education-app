@@ -9,7 +9,7 @@ const Home: FC = () => {
 	return (
 		<Page>
 			<StartScreen
-				title={'С наступающим Новым Годом!'}
+				title={'Начните год по-новому вместе с Курсач'}
 				imgSrc={
 					'https://cdn.skillbox.pro/wbd-front/skillbox-static/start-screen/start-screen-sm@1x.png?v=201223'
 				}
