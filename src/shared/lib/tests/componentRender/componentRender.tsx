@@ -2,6 +2,8 @@ import { ReduxProvider, StoreState } from '@/app/providers/StoreProvider'
 import { render } from '@testing-library/react'
 import { FC, PropsWithChildren, ReactElement } from 'react'
 import { MemoryRouter } from 'react-router-dom'
+// eslint-disable-next-line blinovsku-plugin/layer-imports
+import '@/app/styles/index.scss'
 
 export interface componentRenderOptions {
 	route?: string

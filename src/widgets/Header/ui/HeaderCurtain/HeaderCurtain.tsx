@@ -21,7 +21,10 @@ export const HeaderCurtain: FC<HeaderCurtainProps> = ({ className }) => {
 	}, [])
 
 	return (
-		<div className={cn('bg-white pb-12', className)}>
+		<div
+			className={cn('bg-white pb-12', className)}
+			data-testid='header.curtain'
+		>
 			<Container>
 				<Divider className='mb-12' />
 				<div className='flex gap-6'>

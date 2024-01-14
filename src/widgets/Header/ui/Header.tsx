@@ -59,6 +59,7 @@ export const Header: FC = () => {
 							className={cn({
 								[styles.toggled]: toggle,
 							})}
+							data-testid='header.btn'
 						>
 							Все курсы
 						</Button>
