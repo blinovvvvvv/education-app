@@ -44,7 +44,7 @@ export const Header: FC = () => {
 	}, [])
 
 	return (
-		<div className={styles.wrapper}>
+		<div className={styles.wrapper} data-testid='header'>
 			<Container>
 				<div
 					className={cn(styles.header, {
