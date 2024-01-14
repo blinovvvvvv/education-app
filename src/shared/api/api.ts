@@ -1,9 +1,18 @@
-import { removeTokensFromCookie } from '@/shared/lib/localStorage/localStorage'
+import {
+	removeTokensFromCookie,
+	saveTokens,
+	Tokens,
+} from '@/shared/lib/localStorage/localStorage'
 import axios from 'axios'
 import Cookies from 'js-cookie'
 
+export const ContentType = {
+	'Content-Type': 'application/json',
+}
+
 export const $api = axios.create({
 	baseURL: __API__,
+	headers: ContentType,
 })
 
 $api.interceptors.request.use(config => {
@@ -28,8 +37,18 @@ $api.interceptors.response.use(
 		) {
 			originalRequest._isRetry = true
 			try {
-				//FIXME: доделать
-				await Cookies.get('refreshToken')
+				const refreshToken = Cookies.get('refreshToken')
+				if (!refreshToken) removeTokensFromCookie()
+
+				const { data } = await axios.post<Tokens>(
+					`${__API__}/auth/new-token`,
+					{ refreshToken },
+					{
+						headers: ContentType,
+					}
+				)
+
+				if (data.accessToken) saveTokens(data)
 
 				return $api.request(originalRequest)
 			} catch (e) {
