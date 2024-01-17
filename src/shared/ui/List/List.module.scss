@@ -1,0 +1,10 @@
+.list {
+}
+
+.horizontal {
+	@apply flex;
+}
+
+.vertical {
+	@apply flex flex-col;
+}

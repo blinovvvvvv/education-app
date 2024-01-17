@@ -1,0 +1,10 @@
+.item {
+	@apply block w-full hover:bg-light-gray transition-all rounded-md;
+
+	> a,
+	button {
+		@apply block w-full h-full px-4 py-2;
+
+		white-space: nowrap;
+	}
+}

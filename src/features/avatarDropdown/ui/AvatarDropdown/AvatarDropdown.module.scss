@@ -1,0 +1,27 @@
+.AvatarDropdown {
+	@apply relative;
+}
+
+.avatar {
+	@apply bg-light-gray rounded-full w-8 h-8 flex items-center justify-center cursor-pointer;
+}
+
+.content {
+	@apply hidden text-[15px] rounded-md p-2 border border-light-gray shadow absolute right-0 top-[150%];
+
+	animation: 0.2s opacity ease;
+}
+
+.open {
+	@apply flex;
+}
+
+@keyframes opacity {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
