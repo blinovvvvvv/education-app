@@ -2,8 +2,8 @@ $loader-colors: dodgerblue, mediumspringgreen, crimson, peachpuff, chocolate,
 	pink;
 $loader-dash: 63;
 $loader-duration: length($loader-colors) * 1s;
-$loader-duration-alt: $loader-duration / length($loader-colors);
-$loader-keyframe: 1 / (length($loader-colors) * 2) * 100;
+$loader-duration-alt: calc($loader-duration / length($loader-colors));
+$loader-keyframe: calc(1 / (length($loader-colors) * 2) * 100);
 
 .loader {
 	animation: loader-turn $loader-duration-alt linear infinite;
