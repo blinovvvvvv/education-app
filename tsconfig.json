@@ -14,21 +14,18 @@
 		"jsx": "react-jsx",
 		"esModuleInterop": true,
 		"allowSyntheticDefaultImports": true,
-		
+
 		/* Linting */
 		"noImplicitAny": true,
 		"strict": true,
 		"noFallthroughCasesInSwitch": true,
 		"baseUrl": ".",
 		"paths": {
-			"@/*": ["./src/*"]
+			"@/*": ["./src/*"],
 		},
-		"types": ["vitest/globals"]
+		"types": ["vitest/globals"],
 	},
-	"include": [
-		"./src/**/*.ts",
-		"./src/**/*.tsx",
-	],
+	"include": ["./src/**/*.ts", "./src/**/*.tsx"],
 	"exclude": ["node_modules"],
-	"references": [{ "path": "./tsconfig.node.json" }]
+	"references": [{ "path": "./tsconfig.node.json" }],
 }

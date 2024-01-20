@@ -12,7 +12,7 @@ interface DashboardHeaderProps {
 export const DashboardHeader: FC<DashboardHeaderProps> = memo(
 	({ className }) => {
 		return (
-			<Container className={cn(styles.header, className)}>
+			<Container className={cn(styles.header, className, 'min-w-[1600px]')}>
 				<Logo />
 				<AvatarDropdown />
 			</Container>

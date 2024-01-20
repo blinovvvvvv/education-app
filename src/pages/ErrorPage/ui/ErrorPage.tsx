@@ -7,14 +7,16 @@ interface ErrorPageProps {
 	className?: string
 }
 
-export const ErrorPage: FC<ErrorPageProps> = ({ className }) => {
+const ErrorPage: FC<ErrorPageProps> = ({ className }) => {
 	const onClick = () => {
 		location.reload()
 	}
 	return (
 		<div className={cn(className)}>
-			<Title size='xl'>Произошла непридвиденная ошибка</Title>
+			<Title size='xl'>Произошла непредвиденная ошибка</Title>
 			<Button onClick={onClick}>Перезагрузить страницу</Button>
 		</div>
 	)
 }
+
+export default ErrorPage

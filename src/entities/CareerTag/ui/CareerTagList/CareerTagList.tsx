@@ -43,7 +43,7 @@ export const CareerTagList: FC<CareerTagListProps> = ({
 				? 'Произошла ошибка('
 				: data?.map(tag => (
 						<CareerTagListItem outline={isOutline} item={tag} key={tag.link} />
-				  ))}
+					))}
 		</div>
 	)
 }

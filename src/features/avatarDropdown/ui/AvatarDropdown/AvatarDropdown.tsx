@@ -7,7 +7,7 @@ import { Divider } from '@/shared/ui/Divider/Divider'
 import { List } from '@/shared/ui/List/List'
 import { ListItem } from '@/shared/ui/List/ListItem/ListItem'
 import { Picture } from '@/shared/ui/Picture/Picture'
-import { FC } from 'react'
+import { FC, useCallback } from 'react'
 import { useNavigate } from 'react-router-dom'
 import styles from './AvatarDropdown.module.scss'
 
@@ -20,9 +20,14 @@ export const AvatarDropdown: FC<AvatarDropdownProps> = ({ className }) => {
 	const { visible, setIsVisible, ref } = useOutside(false)
 	const { logout } = useUserActions()
 
-	const onClick = () => {
+	const onClick = useCallback(() => {
 		setIsVisible(prev => !prev)
-	}
+	}, [setIsVisible])
+
+	const onLogout = useCallback(() => {
+		logout()
+		navigate('/')
+	}, [logout, navigate])
 
 	return (
 		<div ref={ref} className={cn(styles.AvatarDropdown, className)}>
@@ -59,7 +64,7 @@ export const AvatarDropdown: FC<AvatarDropdownProps> = ({ className }) => {
 					</Button>
 				</ListItem>
 				<ListItem>
-					<Button onClick={() => logout()} theme='clear'>
+					<Button onClick={onLogout} theme='clear'>
 						Выход
 					</Button>
 				</ListItem>
