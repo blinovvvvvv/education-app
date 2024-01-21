@@ -1,3 +1,4 @@
+import { CoursePage } from '@/pages/Course'
 import { Dashboard } from '@/pages/Dashboard'
 import { Home } from '@/pages/Home'
 import { LoginPage } from '@/pages/Login'
@@ -19,6 +20,11 @@ export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
 		path: '/dashboard',
 		authOnly: true,
 		element: <Dashboard />,
+	},
+	[AppRoutes.COURSE]: {
+		path: '/dashboard',
+		authOnly: true,
+		element: <CoursePage />,
 	},
 	// not found, last
 	[AppRoutes.NOT_FOUND]: {
