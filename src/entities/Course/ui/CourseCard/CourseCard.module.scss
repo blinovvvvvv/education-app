@@ -1,2 +1,5 @@
 .CourseCard {
+	@apply cursor-pointer flex gap-12 p-8 bg-light-gray rounded-lg hover:bg-[#EEE];
+
+	transition: background-color 0.2s ease;
 }

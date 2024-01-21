@@ -4,6 +4,7 @@ import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch
 import { useAuth } from '@/shared/lib/hooks/useAuth/useAuth'
 import { useTypedSelector } from '@/shared/lib/hooks/useTypedSelector/useTypedSelector'
 import { Container } from '@/shared/ui/Container/Container'
+import { Skeleton } from '@/shared/ui/Skeleton/Skeleton'
 import { Title } from '@/shared/ui/Title/Title'
 import { DashboardHeader } from '@/widgets/DashboardHeader'
 import { Page } from '@/widgets/Page'
@@ -42,10 +43,18 @@ const Dashboard: FC<DashboardProps> = ({ className }) => {
 						</div>
 					</div>
 					<div>
-						<Title size='s' level='h2'>
+						<Title size='s' level='h2' className='mb-4'>
 							Ваши курсы
 						</Title>
-						<CourseList items={courses} />
+						{isLoading ? (
+							<>
+								<Skeleton width={425} height={164} />
+								<Skeleton width={425} height={164} />
+								<Skeleton width={425} height={164} />
+							</>
+						) : (
+							<CourseList items={courses} />
+						)}
 					</div>
 				</div>
 			</Container>
