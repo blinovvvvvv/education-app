@@ -1,0 +1,15 @@
+.BackButton {
+	@apply flex items-center gap-4;
+
+	&:hover {
+		.icon {
+			@apply bg-[#EEE];
+		}
+	}
+}
+
+.icon {
+	@apply p-4 w-10 h-10 bg-light-gray flex items-center justify-center rounded-full;
+
+	transition: background-color 0.2s ease;
+}

@@ -47,11 +47,11 @@ const Dashboard: FC<DashboardProps> = ({ className }) => {
 							Ваши курсы
 						</Title>
 						{isLoading ? (
-							<>
+							<div className='flex gap-4'>
 								<Skeleton width={425} height={164} />
 								<Skeleton width={425} height={164} />
 								<Skeleton width={425} height={164} />
-							</>
+							</div>
 						) : (
 							<CourseList items={courses} />
 						)}

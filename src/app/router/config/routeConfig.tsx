@@ -22,7 +22,7 @@ export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
 		element: <Dashboard />,
 	},
 	[AppRoutes.COURSE]: {
-		path: '/dashboard',
+		path: '/course/:id',
 		authOnly: true,
 		element: <CoursePage />,
 	},
