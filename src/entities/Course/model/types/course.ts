@@ -7,3 +7,9 @@ export interface Course extends IdTimestamps {
 	slug: string
 	modules: CourseModule[]
 }
+
+export interface CoursePageState {
+	error?: string
+	isLoading: boolean
+	data?: Course
+}

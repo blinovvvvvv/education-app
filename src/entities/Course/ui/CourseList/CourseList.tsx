@@ -13,7 +13,7 @@ export const CourseList: FC<CourseListProps> = ({ className, items }) => {
 	return (
 		<div className={cn(styles.CourseList, className)}>
 			{items.map(item => (
-				<CourseCard course={item} key={item.id} />
+				<CourseCard course={item} linkId={item.id} key={item.id} />
 			))}
 		</div>
 	)

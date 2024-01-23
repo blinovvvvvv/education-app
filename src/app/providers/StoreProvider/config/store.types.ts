@@ -1,3 +1,4 @@
+import { CoursePageState } from '@/entities/Course'
 import { UserState } from '@/entities/User'
 import { LoginState } from '@/features/auth'
 import { DashboardPageState } from '@/pages/Dashboard'
@@ -8,6 +9,7 @@ export interface StoreState {
 	user: UserState
 	login: LoginState
 	dashboardPage: DashboardPageState
+	coursePage: CoursePageState
 
 	[rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>
 }

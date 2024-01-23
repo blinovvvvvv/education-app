@@ -1,4 +1,5 @@
 import { StoreState } from '@/app/providers/StoreProvider'
+import { coursePageReducer } from '@/entities/Course'
 import { userReducer } from '@/entities/User'
 import { loginReducer } from '@/features/auth'
 import { dashboardPageReducer } from '@/pages/Dashboard'
@@ -17,6 +18,7 @@ export const createReduxStore = (initialState: DeepPartial<StoreState>) => {
 			user: userReducer,
 			login: loginReducer,
 			dashboardPage: dashboardPageReducer,
+			coursePage: coursePageReducer,
 
 			// api
 			[rtkApi.reducerPath]: rtkApi.reducer,

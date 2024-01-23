@@ -1,2 +1,5 @@
-export type { Course } from './model/types/course'
+export { fetchCourseById } from './model/services/fetchCourseById/fetchCourseById'
+export { coursePageReducer } from './model/slice/course.slice'
+export type { Course, CoursePageState } from './model/types/course'
+export { CourseCard } from './ui/CourseCard/CourseCard'
 export { CourseList } from './ui/CourseList/CourseList'
