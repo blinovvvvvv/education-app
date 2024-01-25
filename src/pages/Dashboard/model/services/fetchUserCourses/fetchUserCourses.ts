@@ -7,7 +7,7 @@ export const fetchUserCourses = createAsyncThunk<
 	Course[],
 	void,
 	ThunkConfig<string>
->('auth/loginByUsername', async (_, thunkAPI) => {
+>('dashboard/fetchUserCourses', async (_, thunkAPI) => {
 	const { extra, rejectWithValue } = thunkAPI
 
 	try {
