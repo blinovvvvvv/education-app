@@ -1,6 +1,8 @@
+import { ProfileCard } from '@/entities/Profile'
 import { useUserActions } from '@/entities/User'
 import userIcon from '@/shared/assets/user.svg'
 import { cn } from '@/shared/lib/classNames/classNames'
+import { useAuth } from '@/shared/lib/hooks/useAuth/useAuth'
 import { useOutside } from '@/shared/lib/hooks/useOutside/useOutside'
 import { Button } from '@/shared/ui/Button/Button'
 import { Divider } from '@/shared/ui/Divider/Divider'
@@ -19,6 +21,7 @@ export const AvatarDropdown: FC<AvatarDropdownProps> = ({ className }) => {
 	const navigate = useNavigate()
 	const { visible, setIsVisible, ref } = useOutside(false)
 	const { logout } = useUserActions()
+	const user = useAuth()
 
 	const onClick = useCallback(() => {
 		setIsVisible(prev => !prev)
@@ -40,6 +43,16 @@ export const AvatarDropdown: FC<AvatarDropdownProps> = ({ className }) => {
 					[styles.open]: visible,
 				})}
 			>
+				<ListItem>
+					<ProfileCard
+						data={user}
+						icon={
+							<div className={styles.avatar} onClick={onClick}>
+								<Picture src={userIcon} alt={'icon'} />
+							</div>
+						}
+					/>
+				</ListItem>
 				<ListItem>
 					<Button theme='clear' onClick={() => navigate('/courses')}>
 						Все курсы и профессии
