@@ -1,6 +1,6 @@
 import arrowIcon from '@/shared/assets/arrow.svg'
 import { cn } from '@/shared/lib/classNames/classNames'
-import { FC, useCallback, useState } from 'react'
+import { FC, ReactElement, useCallback, useState } from 'react'
 import { Picture } from '../Picture/Picture'
 import { Title } from '../Title/Title'
 import styles from './Accordion.module.scss'
@@ -8,7 +8,7 @@ import styles from './Accordion.module.scss'
 interface AccordionProps {
 	className?: string
 	title: string
-	content: string
+	content: ReactElement
 }
 
 export const Accordion: FC<AccordionProps> = ({

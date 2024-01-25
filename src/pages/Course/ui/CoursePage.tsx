@@ -1,4 +1,6 @@
 import { CourseCard, fetchCourseById } from '@/entities/Course'
+import { ExerciseList } from '@/entities/Exercise'
+
 import { BackButton } from '@/features/backButton'
 import { cn } from '@/shared/lib/classNames/classNames'
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
@@ -10,7 +12,7 @@ import { Title } from '@/shared/ui/Title/Title'
 import { DashboardHeader } from '@/widgets/DashboardHeader'
 import { Page } from '@/widgets/Page'
 import { PageLoader } from '@/widgets/PageLoader'
-import { FC, useEffect } from 'react'
+import { FC, Fragment, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 
 interface CoursePageProps {
@@ -41,10 +43,15 @@ const CoursePage: FC<CoursePageProps> = ({ className }) => {
 					<div className='flex-grow max-w-[800px]'>
 						<Divider />
 						{course.modules.map((module, index) => (
-							<>
-								<Accordion key={module.id} content='Text' title={module.name} />
+							<Fragment key={module.id}>
+								<Accordion
+									content={
+										<ExerciseList className='my-3' items={module.exercises} />
+									}
+									title={module.name}
+								/>
 								{index % 2 === 0 && <Divider />}
-							</>
+							</Fragment>
 						))}
 						<Divider />
 					</div>

@@ -18,7 +18,7 @@
 .content {
 	@apply grid py-3;
 	grid-template-rows: 0fr;
-	transition: grid-template-rows 0.1s ease;
+	transition: grid-template-rows 0.3s ease;
 }
 
 .opened {
