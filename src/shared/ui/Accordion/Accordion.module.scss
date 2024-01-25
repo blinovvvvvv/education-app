@@ -1,0 +1,30 @@
+.accordion {
+	@apply pt-6;
+}
+
+.top {
+	@apply flex items-center justify-between;
+}
+
+.arrow {
+	transform: scale(0.8) rotate(270deg);
+	transition: all 0.2s ease;
+}
+
+.arrowOpen {
+	transform: scale(0.8) rotate(90deg);
+}
+
+.content {
+	@apply grid py-3;
+	grid-template-rows: 0fr;
+	transition: grid-template-rows 0.1s ease;
+}
+
+.opened {
+	grid-template-rows: 1fr;
+}
+
+.inner {
+	@apply overflow-hidden;
+}

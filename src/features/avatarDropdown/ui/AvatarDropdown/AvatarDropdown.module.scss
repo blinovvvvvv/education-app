@@ -1,5 +1,5 @@
 .AvatarDropdown {
-	@apply relative;
+	@apply relative z-2;
 }
 
 .avatar {
@@ -7,7 +7,7 @@
 }
 
 .content {
-	@apply hidden text-[15px] rounded-md p-2 border border-light-gray shadow absolute right-0 top-[150%];
+	@apply bg-white hidden text-[15px] rounded-md p-2 border border-light-gray shadow absolute right-0 top-[150%];
 
 	animation: 0.2s opacity ease;
 }
