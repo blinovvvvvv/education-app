@@ -4,7 +4,7 @@
 	"plugins": ["stylelint-prettier"],
 	"rules": {
 		"color-no-invalid-hex": true,
-		"prettier/prettier": true,
+		"prettier/prettier": null,
 		"scss/at-rule-no-unknown": [
 			true,
 			{
