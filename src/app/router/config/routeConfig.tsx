@@ -1,5 +1,6 @@
 import { CoursePage } from '@/pages/Course'
 import { Dashboard } from '@/pages/Dashboard'
+import { ExercisePage } from '@/pages/Exercise'
 import { Home } from '@/pages/Home'
 import { LoginPage } from '@/pages/Login'
 import { NotFoundPage } from '@/pages/NotFound'
@@ -25,6 +26,11 @@ export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
 		path: '/course/:id',
 		authOnly: true,
 		element: <CoursePage />,
+	},
+	[AppRoutes.EXERCISE]: {
+		path: '/exercise/:id',
+		authOnly: true,
+		element: <ExercisePage />,
 	},
 	// not found, last
 	[AppRoutes.NOT_FOUND]: {

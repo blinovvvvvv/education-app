@@ -4,10 +4,14 @@ import { Page } from '@/widgets/Page'
 import { StartScreen } from '@/widgets/StartScreen'
 
 import { FC } from 'react'
+import { Helmet } from 'react-helmet-async'
 
 const Home: FC = () => {
 	return (
 		<Page>
+			<Helmet>
+				<title>Главная</title>
+			</Helmet>
 			<StartScreen
 				title={'Начните год по-новому вместе с Курсач'}
 				imgSrc={

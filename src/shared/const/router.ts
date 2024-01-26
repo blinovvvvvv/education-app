@@ -4,4 +4,5 @@ export enum AppRoutes {
 	NOT_FOUND = 'not_found',
 	DASHBOARD = 'dashboard',
 	COURSE = 'course',
+	EXERCISE = 'exercise',
 }
