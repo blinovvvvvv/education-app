@@ -19,6 +19,9 @@
 	"lint-staged": {
 		"**/*.{ts,tsx}": [
 			"eslint"
+		],
+		"**/*.{scss}": [
+			"npx stylelint \"**/*.scss\""
 		]
 	},
 	"dependencies": {

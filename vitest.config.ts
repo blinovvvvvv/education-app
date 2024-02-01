@@ -4,6 +4,7 @@ import { defineConfig } from 'vite'
 export default defineConfig({
 	define: {
 		__API__: JSON.stringify('api'),
+		__IS_DEV__: JSON.stringify(true),
 	},
 	test: {
 		clearMocks: true,
