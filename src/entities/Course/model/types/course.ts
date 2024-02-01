@@ -8,7 +8,7 @@ export interface Course extends IdTimestamps {
 	modules: CourseModule[]
 }
 
-export interface CoursePageState {
+export interface CourseState {
 	error?: string
 	isLoading: boolean
 	data?: Course

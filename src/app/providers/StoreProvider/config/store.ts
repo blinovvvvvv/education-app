@@ -1,5 +1,6 @@
 import { StoreState } from '@/app/providers/StoreProvider'
-import { coursePageReducer } from '@/entities/Course'
+import { courseReducer } from '@/entities/Course'
+import { coursePageReducer, exerciseReducer } from '@/entities/Exercise'
 import { userReducer } from '@/entities/User'
 import { loginReducer } from '@/features/auth'
 import { dashboardPageReducer } from '@/pages/Dashboard'
@@ -18,13 +19,15 @@ export const createReduxStore = (initialState: DeepPartial<StoreState>) => {
 			user: userReducer,
 			login: loginReducer,
 			dashboardPage: dashboardPageReducer,
+			course: courseReducer,
 			coursePage: coursePageReducer,
+			exercise: exerciseReducer,
 
 			// api
 			[rtkApi.reducerPath]: rtkApi.reducer,
 		},
 		preloadedState: initialState as StoreState,
-		devTools: true,
+		devTools: __IS_DEV__,
 		middleware: getDefaultMiddleware =>
 			getDefaultMiddleware({
 				thunk: {

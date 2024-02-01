@@ -1,6 +1,8 @@
-import { CoursePageState } from '@/entities/Course'
+import { CourseState } from '@/entities/Course'
+import { CoursePageState, ExerciseState } from '@/entities/Exercise'
 import { UserState } from '@/entities/User'
 import { LoginState } from '@/features/auth'
+
 import { DashboardPageState } from '@/pages/Dashboard'
 import { rtkApi } from '@/shared/api/rtkApi'
 import { AxiosInstance } from 'axios'
@@ -9,7 +11,9 @@ export interface StoreState {
 	user: UserState
 	login: LoginState
 	dashboardPage: DashboardPageState
+	course: CourseState
 	coursePage: CoursePageState
+	exercise: ExerciseState
 
 	[rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>
 }

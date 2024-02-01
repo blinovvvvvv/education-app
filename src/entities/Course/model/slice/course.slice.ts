@@ -1,8 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { fetchCourseById } from '../services/fetchCourseById/fetchCourseById'
-import { CoursePageState } from '../types/course'
+import { CourseState } from '../types/course'
 
-const initialState: CoursePageState = {
+const initialState: CourseState = {
 	isLoading: false,
 	data: undefined,
 	error: undefined,
@@ -30,4 +30,4 @@ export const courseSlice = createSlice({
 	},
 })
 
-export const { reducer: coursePageReducer } = courseSlice
+export const { reducer: courseReducer } = courseSlice

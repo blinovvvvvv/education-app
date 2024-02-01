@@ -13,3 +13,9 @@ export interface Exercise extends IdTimestamps {
 	body: ExerciseBlock[]
 	completedUsers: User[]
 }
+
+export interface ExerciseState {
+	isLoading: boolean
+	error?: string
+	data?: Exercise
+}

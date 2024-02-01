@@ -1,18 +1,16 @@
 import { ThunkConfig } from '@/app/providers/StoreProvider'
-
-// import { coursePageActions } from '@/pages/Course'
 import { createAsyncThunk } from '@reduxjs/toolkit'
-import { Course } from '../../types/course'
+import { Exercise } from '../../types/exercise'
 
-export const fetchCourseById = createAsyncThunk<
-	Course,
+export const fetchExerciseById = createAsyncThunk<
+	Exercise,
 	number,
 	ThunkConfig<string>
->('course/fetchCourseById', async (id, thunkAPI) => {
+>('exercise/fetchExerciseById', async (id, thunkAPI) => {
 	const { extra, rejectWithValue } = thunkAPI
 
 	try {
-		const { data } = await extra.api.get<Course>(`/course/${id}`)
+		const { data } = await extra.api.get<Exercise>(`/exercise/${id}`)
 
 		return data
 	} catch (e) {
