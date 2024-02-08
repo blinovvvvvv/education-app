@@ -1,5 +1,6 @@
 import arrowIcon from '@/shared/assets/arrow.svg'
 import { cn } from '@/shared/lib/classNames/classNames'
+import { useTypedSelector } from '@/shared/lib/hooks/useTypedSelector/useTypedSelector'
 import { Button } from '@/shared/ui/Button/Button'
 import { Picture } from '@/shared/ui/Picture/Picture'
 import { FC, memo, useCallback } from 'react'
@@ -12,10 +13,11 @@ interface BackButtonProps {
 
 export const BackButton: FC<BackButtonProps> = memo(({ className }) => {
 	const navigate = useNavigate()
+	const courseId = useTypedSelector(state => state.course.data?.id)
 
 	const onClick = useCallback(() => {
-		navigate(-1)
-	}, [navigate])
+		navigate(`/course/${courseId}`)
+	}, [courseId, navigate])
 
 	return (
 		<Button

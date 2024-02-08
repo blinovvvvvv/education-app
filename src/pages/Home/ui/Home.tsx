@@ -1,8 +1,6 @@
 import { FindProfession } from '@/widgets/FindProfession'
 import { Page } from '@/widgets/Page'
-
 import { StartScreen } from '@/widgets/StartScreen'
-
 import { FC } from 'react'
 import { Helmet } from 'react-helmet-async'
 

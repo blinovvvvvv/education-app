@@ -1,0 +1,13 @@
+.switch {
+	@apply rounded-full bg-light-gray hover:bg-[#EEE];
+
+	transition: all 0.2s ease;
+}
+
+.icon {
+	@apply w-10 h-10 p-3;
+}
+
+.right {
+	transform: rotate(180deg);
+}

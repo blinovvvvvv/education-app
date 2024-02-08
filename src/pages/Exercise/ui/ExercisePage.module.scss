@@ -1,0 +1,6 @@
+.layout {
+	@apply grid gap-10;
+
+	// grid-template-areas: 'back content rightbar';
+	grid-template-columns: auto 1fr 100px;
+}
