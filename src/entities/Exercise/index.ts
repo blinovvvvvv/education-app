@@ -1,3 +1,4 @@
+export { completeExerciseById } from './model/services/completeExerciseById/completeExerciseById'
 export { fetchExerciseById } from './model/services/fetchExerciseById/fetchExerciseById'
 export {
 	coursePageActions,

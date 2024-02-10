@@ -2,5 +2,5 @@
 	@apply grid gap-10;
 
 	// grid-template-areas: 'back content rightbar';
-	grid-template-columns: auto 1fr 100px;
+	grid-template-columns: auto 1fr min-content;
 }
