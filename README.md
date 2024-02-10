@@ -13,7 +13,6 @@ This is a frontend application built using the **React** & **Vite** and **Featur
 - Configured linters (ESLint, Stylelint, Prettier)
 - Developing by Feature Sliced Design (Layers isolation and composition, Public API)
 - Testing via Vitest
-- Framer-Motion for animations
 
 ## License
 
