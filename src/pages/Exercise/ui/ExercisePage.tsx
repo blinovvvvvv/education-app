@@ -28,6 +28,7 @@ const ExercisePage: FC<ExercisePageProps> = ({ className }) => {
 	const error = useTypedSelector(state => state.exercise.error)
 
 	const exerciseData = useTypedSelector(state => state.exercise?.data)
+	const courseId = useTypedSelector(state => state.course.data?.id)
 	const { selectExercise } = useCoursePageActions()
 
 	const exerciseId = useTypedSelector(state => state.coursePage.currentExercise)
@@ -53,7 +54,7 @@ const ExercisePage: FC<ExercisePageProps> = ({ className }) => {
 			</Helmet>
 			<Container className='min-w-[1600px] mt-8'>
 				<div className={styles.layout}>
-					<BackButton className='self-start' />
+					<BackButton link={`/course/${courseId}`} className='self-start' />
 					{id && <ExerciseDetails id={+id} />}
 					{exerciseId && (
 						<div className='flex self-start justify-end gap-2'>

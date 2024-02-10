@@ -50,7 +50,7 @@ const CoursePage: FC<CoursePageProps> = ({ className }) => {
 				<title>{course?.name}</title>
 			</Helmet>
 			<Container className='min-w-[1600px] mt-8'>
-				<BackButton className='mb-12' />
+				<BackButton link='/dashboard' className='mb-12' />
 				<div className='flex gap-8 justify-between'>
 					<CourseCard className='self-start' course={course} />
 					<div className='flex-grow max-w-[800px]'>
