@@ -24,6 +24,7 @@ export const Accordion: FC<AccordionProps> = ({
 
 	return (
 		<div
+			data-testid='accordion'
 			role='button'
 			onClick={onClick}
 			className={cn(styles.accordion, className)}
@@ -41,6 +42,7 @@ export const Accordion: FC<AccordionProps> = ({
 				/>
 			</div>
 			<div
+				data-testid='accordion.content'
 				className={cn(styles.content, {
 					[styles.opened]: isOpen,
 				})}

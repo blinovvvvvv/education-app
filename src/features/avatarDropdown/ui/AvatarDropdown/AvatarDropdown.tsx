@@ -33,11 +33,16 @@ export const AvatarDropdown: FC<AvatarDropdownProps> = ({ className }) => {
 	}, [logout, navigate])
 
 	return (
-		<div ref={ref} className={cn(styles.AvatarDropdown, className)}>
+		<div
+			data-testid='avatar-dropdown'
+			ref={ref}
+			className={cn(styles.AvatarDropdown, className)}
+		>
 			<div className={styles.avatar} onClick={onClick}>
 				<Picture src={userIcon} alt={'icon'} />
 			</div>
 			<List
+				data-testid='avatar-dropdown.content'
 				direction='vertical'
 				className={cn('gap-1', styles.content, {
 					[styles.open]: visible,

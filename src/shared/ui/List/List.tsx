@@ -7,12 +7,21 @@ export type ListDirection = 'vertical' | 'horizontal'
 interface ListProps {
 	direction?: ListDirection
 	className?: string
+	'data-testid'?: string
 }
 
 export const List: FC<PropsWithChildren<ListProps>> = memo(
-	({ className, direction = 'horizontal', children }) => {
+	({
+		className,
+		direction = 'horizontal',
+		'data-testid': dataTestId,
+		children,
+	}) => {
 		return (
-			<ul className={cn(styles.list, className, styles[direction])}>
+			<ul
+				data-testid={dataTestId}
+				className={cn(styles.list, className, styles[direction])}
+			>
 				{children}
 			</ul>
 		)

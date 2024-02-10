@@ -33,6 +33,7 @@ export const SwitchExercise: FC<SwitchExerciseProps> = memo(
 
 		return (
 			<Button
+				data-testid='switch-exercise'
 				onClick={onClick}
 				theme='clear'
 				className={cn(styles.switch, className)}

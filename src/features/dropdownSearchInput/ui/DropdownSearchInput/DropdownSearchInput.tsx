@@ -24,8 +24,9 @@ export const DropdownSearchInput: FC<DropdownSearchInputProps> = ({
 	//FIXME: костыль, не лучшее решение
 	const [result, setResult] = useState<Course[]>([])
 	const [filteredValue, setFilteredValue] = useState(value)
-	const debouncedSetFilteredValue = useDebounce(setFilteredValue, 1000)
 	const [visible, setVisible] = useState(false)
+
+	const debouncedSetFilteredValue = useDebounce(setFilteredValue, 1000)
 
 	const fetchData = useCallback(async () => {
 		const data = await findCourses(filteredValue)

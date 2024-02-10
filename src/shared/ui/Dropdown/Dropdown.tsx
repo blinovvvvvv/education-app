@@ -29,6 +29,7 @@ export const Dropdown: FC<PropsWithChildren<DropdownProps>> = memo(
 
 		return (
 			<div
+				data-testid='dropdown'
 				className={styles.dropdown}
 				onMouseEnter={onMouseEnter}
 				onMouseLeave={onMouseLeave}
@@ -36,6 +37,7 @@ export const Dropdown: FC<PropsWithChildren<DropdownProps>> = memo(
 				<button className={styles.button}>{buttonText}</button>
 
 				<ul
+					data-testid='dropdown.content'
 					className={styles.content}
 					style={{ display: isHover ? 'flex' : 'none' }}
 				>
